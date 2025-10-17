@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Homepage.css';
+import '../../styles/HomePage.css';
 
-const Homepage = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   return (
@@ -60,4 +60,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

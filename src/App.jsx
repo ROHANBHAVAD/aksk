@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Homepage from './pages/home/HomePage';
+
 import ProductPage from './pages/product/ProductPage';
 import OrderPage from './pages/order/OrderPage'; // ✅ Add this
 import ContactPage from './pages/contact/ContactPage';
 import AboutPage from './pages/about/AboutPage';
 import Layout from './pages/layout/Layout';
+import HomePage from './pages/home/HomePage';
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout/>}>
-          <Route index element={<Homepage />} />
+          <Route index element={<HomePage />} />
           <Route path="products" element={<ProductPage />} />
           <Route path="order" element={<OrderPage />} /> {/* ✅ Add this */}
           <Route path="contact" element={<ContactPage />} />
