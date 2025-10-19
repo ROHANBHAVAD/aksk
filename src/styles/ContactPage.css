@@ -179,5 +179,18 @@
   .contact-form input,
   .contact-form textarea {
     font-size: 0.95rem;
+   
   }
+
+/* Ensure all text inside info-boxes is black */
+.contact-info .info-box p,
+.contact-info .info-box li,
+.contact-info .info-box blockquote,
+.contact-info .info-box h3 {
+  color: #000;
+}
+
+
+
+
 }
