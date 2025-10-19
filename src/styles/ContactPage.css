@@ -3,7 +3,7 @@
   padding: 2rem;
   background: linear-gradient(to right, #f0f4f7, #e8f5e9);
   flex: 1 1 0;
-  min-width: 0px;
+  min-width: 0;
 
 
   
@@ -17,8 +17,8 @@
 /* Desktop Layout: offset for sidebar */
 @media screen and (min-width: 769px) {
   .contact-page {
-    margin-left: 250px; /* match sidebar width */
-    min-width: 1290px;
+    margin-left: 200px; /* match sidebar width */
+    min-width: 1200px;
   }
 }
 
@@ -29,6 +29,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 1200px;
 }
 
 .contact-hero h1 {
