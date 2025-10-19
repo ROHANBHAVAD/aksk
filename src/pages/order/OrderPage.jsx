@@ -12,7 +12,7 @@ const OrderPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    product: prefilledProduct,
+    product:'' || prefilledProduct,
     quantity: '',
     message: ''
   });
