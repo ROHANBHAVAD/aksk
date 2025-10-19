@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <div className="about-page">
       <section className="about-hero">
-        <h1>About Atharv Sheti Seva Kendra</h1>
+        <h1>About Atharv Krushi Seva Kendra</h1>
         <p>Empowering farmers with trusted products, expert guidance, and a commitment to sustainable agriculture.</p>
       </section>
 
