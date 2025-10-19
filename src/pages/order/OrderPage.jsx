@@ -1,17 +1,27 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import '../../styles/OrderPage.css';
 
 const OrderPage = () => {
   const formRef = useRef();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const prefilledProduct = queryParams.get('product') || '';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    product: '',
+    product: prefilledProduct,
     quantity: '',
     message: ''
   });
+
   const [statusMessage, setStatusMessage] = useState('');
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, product: prefilledProduct }));
+  }, [prefilledProduct]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

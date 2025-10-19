@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/ProductPage.css';
 
 const products = [
@@ -61,7 +62,9 @@ const ProductPage = () => {
                       <li key={index}>{benefit}</li>
                     ))}
                   </ul>
-                  <button>Order Now</button>
+                  <Link to={`/order?product=${encodeURIComponent(product.name)}`}>
+                    <button>Order Now</button>
+                  </Link>
                 </div>
               ))}
             </div>
