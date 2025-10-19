@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import '../../styles/ContactPage.css';
 
+
+
 const ContactPage = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (data.success) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Something went wrong.');
-      }
-    } catch (error) {
-      alert('Server error. Please try again later.');
-    }
+
+emailjs.sendForm(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  formRef.current,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+)
+
+
+    .then(() => {
+      setStatusMessage('✅ Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    })
+    .catch(() => {
+      setStatusMessage('❌ Failed to send message. Please try again.');
+    });
   };
 
   return (
@@ -40,7 +45,7 @@ const ContactPage = () => {
           {/* Left: Contact Form */}
           <div className="contact-form">
             <h2>Send a Message</h2>
-            <form onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit}>
               <label>Name</label>
               <input
                 type="text"
@@ -72,6 +77,7 @@ const ContactPage = () => {
               />
 
               <button type="submit">Submit</button>
+              {statusMessage && <p className="status-message">{statusMessage}</p>}
             </form>
           </div>
 

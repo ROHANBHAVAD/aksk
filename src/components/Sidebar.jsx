@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Sidebar.css'; // Adjusted path for clarity
+import '../styles/Sidebar.css';
 
 const Sidebar = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if (isMobile) return null; // Hide sidebar on mobile
+
   return (
     <nav className="sidebar">
       <h2 className="logo">Atharv Krushi</h2>

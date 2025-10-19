@@ -1,24 +1,141 @@
-@media screen and (max-width: 768px) {
-  /* Homepage Layout */
+/* Base Layout */
+.homepage {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0f4f7, #e8f5e9);
+  margin-left: 0; /* default for mobile */
+}
+
+/* Desktop Layout: offset for sidebar */
+@media screen and (min-width: 769px) {
   .homepage {
-    margin-left: 0;
+    margin-left: 250px; /* same as sidebar width */
+  }
+}
+
+
+/* Section Wrapper */
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #81c784, #66bb6a);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #f5f5f5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  background-color: #388e3c;
+}
+
+/* Mission & CTA */
+.mission h2,
+.services h2,
+.cta h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #388e3c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mission p,
+.cta p {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cta button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Services Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .homepage {
     padding: 1rem;
-    gap: 1.5rem;
-    max-width: 100%;
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: 2rem 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
   }
 
   .hero-buttons {
@@ -28,59 +145,14 @@
 
   .hero-buttons button {
     width: 100%;
-    max-width: 250px;
-  }
-
-  /* Mission Section */
-  .mission {
-    padding: 1.5rem 1rem;
-  }
-
-  .mission h2 {
-    font-size: 1.5rem;
-  }
-
-  .mission p {
-    font-size: 1rem;
-  }
-
-  /* Services Section */
-  .services {
-    padding: 1.5rem 1rem;
-  }
-
-  .services h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    width: 100%;
     max-width: 300px;
   }
 
-  /* Call to Action */
-  .cta {
-    padding: 1.5rem 1rem;
+  .service-grid {
+    grid-template-columns: 1fr;
   }
 
-  .cta h2 {
-    font-size: 1.5rem;
-  }
-
-  .cta p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .cta button {
-    width: 100%;
-    max-width: 250px;
+  .section-content {
+    padding: 0.5rem;
   }
 }

@@ -1,11 +1,19 @@
+/* Base Layout */
 .about-page {
-  padding: 2rem;
+  padding: 3rem;
   background-color: #f9fef9;
   min-height: 200vh;
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-left: 8rem;
+  margin-left: 0; /* default for mobile */
+}
+
+/* Desktop Layout: offset for sidebar */
+@media screen and (min-width: 769px) {
+  .about-page {
+    margin-left: 250px; /* match sidebar width */
+  }
 }
 
 /* Hero */
@@ -14,15 +22,16 @@
   background: linear-gradient(to right, #a5d6a7, #c8e6c9);
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #2e7d32;
 }
 
 .about-hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #333;
 }
 
@@ -31,6 +40,7 @@
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-mission h2 {
@@ -48,6 +58,7 @@
   background-color: #e8f5e9;
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-values h2 {
@@ -71,6 +82,7 @@
   background-color: #ffffff;
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-team h2 {
@@ -115,6 +127,7 @@
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .about-impact h2 {
@@ -125,4 +138,34 @@
 .about-impact p {
   font-size: 1rem;
   color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .about-page {
+    padding: 1rem;
+    margin-left: 0;
+  }
+
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero p,
+  .about-mission p,
+  .about-values li,
+  .team-card p,
+  .about-impact p {
+    font-size: 0.95rem;
+  }
 }

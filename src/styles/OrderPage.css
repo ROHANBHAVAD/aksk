@@ -1,48 +1,60 @@
-
-
-
-
+/* Base Layout */
 .order-page {
   padding: 2rem;
-  background-color: #f9fef9;
-  min-height: 170vh;
+  background: linear-gradient(to right, #f0f4f7, #e8f5e9);
+  min-height: 200vh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-left: 8rem;
+  gap: 3rem;
+  margin-left: 0; /* default for mobile */
+  box-sizing: border-box;
 }
 
+/* Desktop Layout: offset for sidebar */
+@media screen and (min-width: 769px) {
+  .order-page {
+    margin-left: 250px; /* match sidebar width */
+  }
+}
+
+/* Hero Section */
 .order-hero {
   text-align: center;
   background: linear-gradient(to right, #a5d6a7, #c8e6c9);
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .order-hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: #2e7d32;
 }
 
 .order-hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #333;
 }
 
 /* Layout */
 .order-layout {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
+  box-sizing: border-box;
+  align-items: flex-start;
 }
 
 /* Order Form */
 .order-form {
-  flex: 2;
+  flex: 1 1 0;
+  min-width: 300px;
   background-color: #77c348;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .order-form h2 {
@@ -66,6 +78,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .order-form button {
@@ -76,24 +89,23 @@
   padding: 0.8rem 1.5rem;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .order-form button:hover {
   background-color: #388e3c;
 }
 
-/* Sidebar */
-.order-sidebar {
-  flex: 2;
-  display: flex;
-  gap: 1.5rem;
+.status-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2e7d32;
 }
 
-.sidebar-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* Sidebar */
+.order-sidebar {
+  flex: 0 0 300px;
+  box-sizing: border-box;
 }
 
 .sidebar-column > div {
@@ -101,6 +113,7 @@
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
 }
 
 .sidebar-column h3 {
@@ -120,18 +133,47 @@
   padding: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .order-page {
+    padding: 1rem;
+    margin-left: 0;
+  }
+
   .order-layout {
     flex-direction: column;
   }
 
-  .order-form,
-  .order-sidebar {
+  .order-form {
+    padding: 1rem;
+  }
+
+  .order-form input,
+  .order-form select,
+  .order-form textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .order-form button {
     width: 100%;
+    font-size: 1rem;
   }
 
   .order-sidebar {
-    flex-direction: column;
+    display: none;
+  }
+
+  .order-hero h1 {
+    font-size: 2rem;
+  }
+
+  .order-hero p,
+  .sidebar-column p,
+  .sidebar-column li,
+  .order-form label,
+  .order-form input,
+  .order-form textarea {
+    font-size: 0.95rem;
   }
 }
