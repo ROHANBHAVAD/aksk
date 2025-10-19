@@ -95,13 +95,13 @@ emailjs.sendForm(
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Store Location"
               ></iframe>
-              <p>Karvir, Kolhapur, Maharashtra</p>
+              <p>Patpnhala,Panhala, Kolhapur, Maharashtra</p>
             </div>
 
             <div className="info-box">
               <h3>📞 Contact Details</h3>
-              <p><strong>Phone:</strong> +91 98765 43210</p>
-              <p><strong>Email:</strong> atharvsevakendra@gmail.com</p>
+              <p><strong>Phone:</strong> +91 00000000000</p>
+              <p><strong>Email:</strong> .............@gmail.com</p>
               <p><strong>Hours:</strong> Mon–Sat, 9 AM to 6 PM</p>
             </div>
 
@@ -112,10 +112,10 @@ emailjs.sendForm(
             </div>
 
             <div className="info-box">
-              <h3>🛠️ Quick Help Topics</h3>
+              <h3>🛠️ We help You</h3>
               <ul>
                 <li>Choosing the right fertilizer</li>
-                <li>Delivery timelines</li>
+                <li>Immediate service</li>
                 <li>Bulk order discounts</li>
               </ul>
             </div>

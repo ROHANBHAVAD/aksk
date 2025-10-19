@@ -138,8 +138,8 @@ const OrderPage = () => {
 
                 <div>
                   <h3>📞 Contact Info</h3>
-                  <p><strong>Phone:</strong> +91 98765 43210</p>
-                  <p><strong>Email:</strong> atharvsevakendra@gmail.com</p>
+                  <p><strong>Phone:</strong> +91 0000000000</p>
+                  <p><strong>Email:</strong> ...........@gmail.com</p>
                 </div>
 
                 <div>
