@@ -35,7 +35,7 @@ const AboutPage = () => {
             <p>Founder & Agronomist</p>
           </div>
           <div className="team-card">
-            <img src="https://img.icons8.com/ios-filled/100/user-female-circle.png" alt="Support" />
+            <img src="https://img.icons8.com/ios-filled/100/user-male-circle.png" alt="Support" />
             <h3>Mr. Atharv Teli </h3>
             <p>Customer Support Lead</p>
           </div>
